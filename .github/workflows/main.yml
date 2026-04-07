@@ -11,5 +11,5 @@ jobs:
       - name: Say Hello
         run: echo "Hello, DevOps World!"
 
-      - name: Simulate Work
-        run: echo "Running some checks..."
+      - name: Break the pipeline
+        run: invalid_command_123"
