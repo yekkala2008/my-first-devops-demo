@@ -21,11 +21,13 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: my-first-artifact
-          path: output.txt- name: Create Release
-  uses: softprops/action-gh-release@v1
-  with:
-    tag_name: v1.0.${{ github.run_number }}
-    name: Release v1.0.${{ github.run_number }}
-    files: output.txt
-  env:
-    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          path: output.txt
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v1.0.${{ github.run_number }}
+          name: Release v1.0.${{ github.run_number }}
+          files: output.txt
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
